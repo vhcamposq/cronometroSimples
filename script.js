@@ -15,10 +15,16 @@ function parar() {
     var hora = 0
     var min = 0
     var seg = 0
-    document.getElementById('contador').innerText = hora +':'+ min +':'+ seg 
+    document.getElementById('contador').innerText = zero(hora) +':'+ zero(min) +':'+ zero(seg) 
 
 }
-
+function zero(digito) {
+    if(digito < 10){
+        return ('0' + digito)
+    }else{
+        return digito
+    }
+}
 function inicio(){
     seg++
     if (seg == 60) {
@@ -30,5 +36,5 @@ function inicio(){
         }
     }
 
-    document.getElementById('contador').innerText = hora +':'+ min +':'+ seg 
+    document.getElementById('contador').innerText = zero(hora) +':'+ zero(min) +':'+ zero(seg) 
 }
